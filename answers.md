@@ -39,19 +39,19 @@ d = |E|\epsilon / |E|^(1/1+\epsilon)
 
 
 - **2a.**
-
+i dont entirely understand how to solve this question. i know that we will make a nxnxn matrix according to the vertices on the graph relating 0,1,2 to i,j,k. we would have to find the minimum combination of these
 
 - **2b.**
-
+APSP(i,j,2) is the minimum APSP(i,j,1). the shortest path from i to j using 0,1,2 pictured would be either the same as 0,1 or found from i to 2 and back using only vertices 0,1
 
 - **2c.**
-
+the optimal substructure property is that APSP(i,j,k) is the minimum of APSP(i,j,k-1), APSP(i,k,k-1), and APSP(k,j,k-1) because of the linked nature of the graph. the shortest path i to j using 0,1,k is found by using vertices 0,1,k-k following the pattern given of 0,1,n-1
 
 - **2d.**
-
+using memoization we would compute nxnxn problems from scratch because we have 0,1,2 and i,j,k creating a 3x3 matrix of the vertices. thus the work would be O(n^3) because of the matrix of entries being the entire cause of the work computation
 
 - **2e.**
-
+the work of johnsons algorithm is  O(|V|^2 * log(|V|+|V||E|)) so in a case with a dense graph our algorithm would be better but in the case of a sparse graph the johnsons algorithm would be better. 
 
 
 - **3a.**
