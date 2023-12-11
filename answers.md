@@ -46,16 +46,26 @@ d = |E|\epsilon / |E|^(1/1+\epsilon)
 
 - **2c.**
 
+
 - **2d.**
+
 
 - **2e.**
 
 
 
 - **3a.**
-
+no, the solution to MST won't always be the same to the MMET. the MST goal is minimizing the overall sum of all edges in the tree while the MMET in this question would be tasked with minimizing the max value of each individual edge. the processes are not the same so the solution will sometimes, but not always, be the same. in a tree with some low edge weights and some high edge weights, the MST will go for a path that has the lowest cost which may include some high edge weights, while the MMET will go for the lowest edge every time which could end up being more costly. they have a similar overall goal as functions but with distinctly different processes to accomplish it.
 
 - **3b.**
-
+prim's algorithm and kruskal's algorithm were two that we learned were the optimal solutions for MST and could be chosen based on what type of graph would be analyzed. A tree with the next lowest weight would be one where there is the most minimal difference, such as only one edge being replaced that has a slightly higher weight than the original.
+-find the optimal solution to the MST using kruskal's without creating any loops. find the optimal weight.
+-for each edge in the optimal MST, remove it and calculate the new optimal MST.
+-after finding each new MST select the one which had the smallest difference in total weight from the actual optimal MST.
 
 - **3c.**
+work of kruskals algorithm: O(|E|log|V|)
+remove edge and find new MST: O(|E|*|E|log|V|)
+comparing distances: O(1)
+total: O(|E|log|V|)+O(|E|*|E|log|V|)
+thus the total would be close to O(|E|*|E|log|V|)
